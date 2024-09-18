@@ -13,7 +13,7 @@ const ReviewPage = () => {
   useEffect(() => {
     const fetchBookDetails = async () => {
       try {
-        const response = await axios.get(`http://localhost:3000/allbooks/${id}`);
+        const response = await axios.get(`https://book-review-backend-hf6p.onrender.com/allbooks/${id}`);
         setBook(response.data);
       } catch (error) {
         console.error('Error fetching book details:', error);
@@ -22,7 +22,7 @@ const ReviewPage = () => {
 
     const fetchReviews = async () => {
       try {
-        const response = await axios.get(`http://localhost:3000/allbooks/${id}/reviews`);
+        const response = await axios.get(`https://book-review-backend-hf6p.onrender.com/allbooks/${id}/reviews`);
         setReviews(response.data); // Set the fetched reviews to state
       } catch (error) {
         console.error('Error fetching reviews:', error);
@@ -38,7 +38,7 @@ const ReviewPage = () => {
     const newReview = { rating, review };
 
     try {
-      await axios.post(`http://localhost:3000/allbooks/${id}/review`, newReview); // Post review to the backend
+      await axios.post(`https://book-review-backend-hf6p.onrender.com/allbooks/${id}/review`, newReview); // Post review to the backend
       setReviews((prevReviews) => [...prevReviews, newReview]); // Update the local state with the new review
       setRating(1); // Reset rating to default
       setReview(''); // Reset review text area
@@ -55,6 +55,8 @@ const ReviewPage = () => {
       <img src={book.cover} alt={book.title} />
       <h2>Details</h2>
       <p>{book.description}</p>
+      <hr />
+      <h2>Reviews</h2>
       <ul>
         {reviews.map((rev) => (
           <li key={rev._id}>
@@ -63,6 +65,7 @@ const ReviewPage = () => {
           </li>
         ))}
       </ul>
+      <hr />
 
       <h2>Submit a Review</h2>
       <form onSubmit={handleSubmit}>
@@ -85,7 +88,7 @@ const ReviewPage = () => {
         <button type="submit">Submit</button>
       </form>
 
-      <h2>Reviews</h2>
+      
       
     </div>
   );

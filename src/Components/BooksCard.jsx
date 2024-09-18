@@ -15,7 +15,7 @@ const BooksCard = () => {
   useEffect(() => {
     const fetchBooks = async () => {
       try {
-        const response = await axios.get('http://localhost:3000/allbooks');
+        const response = await axios.get('https://book-review-backend-hf6p.onrender.com/allbooks');
         setBooks(response.data);
       } catch (error) {
         setError(error);
