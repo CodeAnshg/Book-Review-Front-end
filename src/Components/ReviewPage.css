@@ -1,0 +1,94 @@
+/* ReviewPage.css */
+.review-page-container {
+    padding: 20px;
+    max-width: 800px; /* Centering the content */
+    margin: auto; /* Center the container */
+    background-color: #f9f9f9; /* Light background for contrast */
+    border-radius: 8px; /* Rounded corners */
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1); /* Soft shadow */
+   
+}
+
+.review-page-container h1 {
+    font-size: 2.5rem; /* Larger title */
+    color: #333; /* Darker text for contrast */
+    margin-bottom: 10px; /* Space below title */
+}
+
+.review-page-container img {
+    max-width: 100%; /* Responsive image */
+    border-radius: 8px; /* Rounded image */
+    box-shadow: 0 2px 6px rgba(0, 0, 0, 0.1); /* Shadow for the image */
+}
+
+.review-page-container h2 {
+    font-size: 1.8rem; /* Slightly larger subheadings */
+    color: #555; /* Slightly lighter for subheadings */
+    margin-top: 20px; /* Space above subheadings */
+    margin-bottom: 10px; /* Space below subheadings */
+}
+
+.review-page-container form {
+    margin: 20px 0;
+    padding: 15px; /* Padding for the form */
+    background-color: #fff; /* White background for form */
+    border-radius: 8px; /* Rounded corners for form */
+    box-shadow: 0 2px 6px rgba(0, 0, 0, 0.1); /* Soft shadow */
+}
+
+.review-page-container label {
+    display: block; /* Each label on a new line */
+    margin-bottom: 10px; /* Space below labels */
+}
+
+.review-page-container select,
+.review-page-container textarea {
+    width: 90%; /* Full-width inputs */
+    padding: 10px; /* Padding inside inputs */
+    border: 1px solid #ccc; /* Light border */
+    border-radius: 4px; /* Rounded corners for inputs */
+    transition: border-color 0.3s; /* Smooth transition for focus */
+}
+.review-page-container select{
+    height: 40px;
+    width: 60px;
+}
+
+.review-page-container select:focus,
+.review-page-container textarea:focus {
+    border-color: #007BFF; /* Change border color on focus */
+    outline: none; /* Remove default outline */
+}
+
+.review-page-container button {
+    background-color: #007BFF; /* Primary button color */
+    color: #fff; /* White text */
+    padding: 10px 15px; /* Padding for button */
+    border: none; /* No border */
+    border-radius: 4px; /* Rounded corners */
+    cursor: pointer; /* Pointer cursor */
+    transition: background-color 0.3s; /* Smooth background transition */
+}
+
+.review-page-container button:hover {
+    background-color: #0056b3; /* Darker blue on hover */
+}
+
+.review-page-container ul {
+    list-style-type: none; /* Remove default list styling */
+    padding: 0;
+}
+
+.review-page-container li {
+    margin: 15px 0; /* More space between reviews */
+    padding: 15px; /* Padding inside each review */
+    background-color: #f1f1f1; /* Light background for reviews */
+    border-radius: 4px; /* Rounded corners for reviews */
+    box-shadow: 0 1px 3px rgba(0, 0, 0, 0.1); /* Light shadow for reviews */
+}
+
+.review-page-container li strong {
+    display: block; /* Each rating on a new line */
+    margin-bottom: 5px; /* Space below rating */
+    color: #333; /* Dark text for rating */
+}
