@@ -10,7 +10,7 @@ const BooksCard = () => {
   const [loading, setLoading] = useState(true);
   const [error, setError] = useState(null);
 
-  const navigate = useNavigate(); // Use useNavigate for navigation
+  const navigate = useNavigate();
 
   useEffect(() => {
     const fetchBooks = async () => {
@@ -30,17 +30,14 @@ const BooksCard = () => {
   if (loading) return <p>Loading...</p>;
   if (error) return <p>Error: {error.message}</p>;
 
-  // Calculate the current books to display
   const indexOfLastBook = currentPage * booksPerPage;
   const indexOfFirstBook = indexOfLastBook - booksPerPage;
   const currentBooks = books.slice(indexOfFirstBook, indexOfLastBook);
 
-  // Handle page change
   const handlePageChange = (pageNumber) => {
     setCurrentPage(pageNumber);
   };
 
-  // Handle next and previous page
   const handleNextPage = () => {
     if (currentPage < Math.ceil(books.length / booksPerPage)) {
       setCurrentPage(currentPage + 1);
@@ -53,12 +50,10 @@ const BooksCard = () => {
     }
   };
 
-  // Handle the "See Reviews" button click
   const handleSeeReviews = (bookId) => {
-    navigate(`/reviews/${bookId}`); // Navigate to the review page
+    navigate(`/reviews/${bookId}`);
   };
 
-  // Generate page numbers
   const pageNumbers = [];
   for (let i = 1; i <= Math.ceil(books.length / booksPerPage); i++) {
     pageNumbers.push(i);

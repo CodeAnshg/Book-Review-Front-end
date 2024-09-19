@@ -4,7 +4,7 @@ import axios from 'axios';
 import './ReviewPage.css';
 
 const ReviewPage = () => {
-  const { id } = useParams(); // Get the book ID from the URL
+  const { id } = useParams();
   const [book, setBook] = useState(null);
   const [rating, setRating] = useState(1);
   const [review, setReview] = useState('');
@@ -23,14 +23,14 @@ const ReviewPage = () => {
     const fetchReviews = async () => {
       try {
         const response = await axios.get(`https://book-review-backend-hf6p.onrender.com/allbooks/${id}/reviews`);
-        setReviews(response.data); // Set the fetched reviews to state
+        setReviews(response.data); 
       } catch (error) {
         console.error('Error fetching reviews:', error);
       }
     };
 
     fetchBookDetails();
-    fetchReviews(); // Fetch reviews when the component mounts
+    fetchReviews(); 
   }, [id]);
 
   const handleSubmit = async (e) => {
@@ -38,10 +38,10 @@ const ReviewPage = () => {
     const newReview = { rating, review };
 
     try {
-      await axios.post(`https://book-review-backend-hf6p.onrender.com/allbooks/${id}/review`, newReview); // Post review to the backend
-      setReviews((prevReviews) => [...prevReviews, newReview]); // Update the local state with the new review
-      setRating(1); // Reset rating to default
-      setReview(''); // Reset review text area
+      await axios.post(`https://book-review-backend-hf6p.onrender.com/allbooks/${id}/review`, newReview); 
+      setReviews((prevReviews) => [...prevReviews, newReview]); 
+      setRating(1); 
+      setReview(''); 
     } catch (error) {
       console.error('Error submitting review:', error);
     }
